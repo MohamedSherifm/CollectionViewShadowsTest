@@ -17,38 +17,17 @@ public partial class MainViewModel : BaseViewModel
     private void PopulateList()
     {
         People.Clear();
-        People.Add(new()
+        People.Insert(0, new()
         {
-            Id = _id++,
-            Name = $"Person{_id}",
+            Id = _id,
+            Name = $"Person{_id++}",
             Age = Age++
         });
 
-        People.Add(new()
+        People.Insert(0,new()
         {
-            Id = _id++,
-            Name = $"Person{_id}",
-            Age = Age++
-        });
-
-        People.Add(new()
-        {
-            Id = _id++,
-            Name = $"Person{_id}",
-            Age = Age++
-        });
-
-        People.Add(new()
-        {
-            Id = _id++,
-            Name = $"Person{_id}",
-            Age = Age++
-        });
-
-        People.Add(new()
-        {
-            Id = _id++,
-            Name = $"Person{_id}",
+            Id = _id,
+            Name = $"Person{_id++}",
             Age = Age++
         });
     }
@@ -56,10 +35,10 @@ public partial class MainViewModel : BaseViewModel
     [RelayCommand]
     private void AddPerson()
     {
-        People.Add(new()
+        People.Insert(0 ,new()
         {
-            Id = _id++,
-            Name = $"Person{_id}",
+            Id = _id,
+            Name = $"Person{_id++}",
             Age = Age++
         });
     }

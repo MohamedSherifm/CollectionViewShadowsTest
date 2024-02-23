@@ -17,7 +17,10 @@
     <Grid RowDefinitions="Auto,*,Auto" RowSpacing="8">
         <Label HorizontalOptions="Center" Text="People" />
 
-        <CollectionView Grid.Row="1" ItemsSource="{Binding People}">
+        <CollectionView
+            Grid.Row="1"
+            ItemsSource="{Binding People}"
+            ItemsUpdatingScrollMode="KeepScrollOffset">
             <CollectionView.ItemTemplate>
                 <DataTemplate x:DataType="models:Person">
                     <Border
@@ -31,12 +34,12 @@
                             <Label Grid.Column="1" Text="{Binding Name}" />
                             <Label Grid.Column="2" Text="{Binding Age}" />
                         </Grid>
-                        <Border.Shadow>
+                        <!--<Border.Shadow>
                             <Shadow
                                 Opacity=".6"
                                 Radius="10"
                                 Offset="0,20" />
-                        </Border.Shadow>
+                        </Border.Shadow>-->
                     </Border>
 
                 </DataTemplate>
